@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Hey, here are the available slots for you! </title>
+</head>
+<body>
+<table>
+    <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Center Address</th>
+        <th>Min Age</th>
+        <th>Available capacity</th>
+        <th>Vaccine</th>
+    </tr>
+    <th:block th:each="slot, stats : ${availableSlots}">
+        <tr>
+            <td th:text="${stats.index + 1}"></td>
+            <td th:text="${slot.date}"></td>
+            <td th:text="${slot.centerAddress}"></td>
+            <td th:text="${slot.minAge}"></td>
+            <td th:text="${slot.availableCapacity}"></td>
+            <td th:text="${slot.vaccine}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
